@@ -13,15 +13,12 @@ Technologies Used: Docker, Python 3.10, Elasticsearch, OpenAI, and Jupyter Noteb
 # Setup and Installation
 
 Install Dependencies: Use pipenv to manage Python packages.
-
+````
 pip install pipenv
 pipenv install tqdm notebook==7.1.2 openai elasticsearch
-
+````
 Configure OpenAI: Set your OpenAI API key in environment variables.
 
-bash
-Copy code
-export OPENAI_API_KEY="your_api_key_here"
 Run Elasticsearch: Use Docker to start an Elasticsearch instance.
 bash
 Copy code
