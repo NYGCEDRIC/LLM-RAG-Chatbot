@@ -1,4 +1,4 @@
-# LLM+RAG Workshop Project
+# LLM+RAG Chatbot
 
 Overview
 
@@ -19,17 +19,30 @@ pipenv install tqdm notebook==7.1.2 openai elasticsearch
 ````
 Configure OpenAI: Set your OpenAI API key in environment variables.
 
+````
+export OPENAI_API_KEY="your_api_key_here"
+````
+
 Run Elasticsearch: Use Docker to start an Elasticsearch instance.
-bash
-Copy code
-docker run -it --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:8.4.3
-Usage
+````
+docker run -it \
+    --name elasticsearch \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -e "discovery.type=single-node" \
+    -e "xpack.security.enabled=false" \
+    docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+````
+# Usage
+
 To use the Q&A bot, run the Jupyter notebook elastic-rag.ipynb and input your questions related to the indexed courses. The system retrieves relevant documents and generates responses using the OpenAI model.
 
-Acknowledgments
+# Acknowledgments
+
 Special thanks to Alexey Grigorev and DataTalksClub for providing an excellent learning experience in the LLM+RAG workshop. Their guidance and insights were invaluable in understanding and implementing this advanced AI technology.
 
-Next Steps
+# Next Steps
+
 Experiment with open-source LLMs for further customization.
 Develop a user interface, possibly with Streamlit, to enhance interaction.
 Deploy the solution for broader accessibility and use.
